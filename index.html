@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>急診防衛性病歷寫作 Orientation — 給即將上工的 V1</title>
+<meta name="description" content="急診主治醫師上工前的防衛性病歷寫作指南：discharge note、SDM、AAD、red flag 衛教、HPI/PE 範本，附 guideline 引用。">
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#1e2530; --muted:#68727f;
+  --accent:#0e6e6b; --accent-soft:#e2f1f0; --line:#e3e7ec;
+  --code-bg:#f2f4f7; --tip-bg:#fff8ec; --tip-border:#e8c97a;
+  --danger:#b4443c; --mono:"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+a{color:var(--accent);text-decoration:none}
+header.topbar{position:sticky;top:0;z-index:50;background:#0d3b3a;color:#fff;padding:.65rem 1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+header.topbar h1{font-size:1.02rem;font-weight:700;letter-spacing:.02em}
+header.topbar .sub{font-size:.78rem;opacity:.75}
+#search{margin-left:auto;padding:.4rem .8rem;border-radius:999px;border:none;width:min(260px,100%);font-size:.88rem;background:#ffffff22;color:#fff;outline:none}
+#search::placeholder{color:#ffffffaa}
+.layout{display:grid;grid-template-columns:240px 1fr;max-width:1200px;margin:0 auto;gap:0}
+nav.side{position:sticky;top:52px;align-self:start;height:calc(100vh - 52px);overflow-y:auto;padding:1.2rem .9rem 3rem;border-right:1px solid var(--line);background:var(--bg)}
+nav.side a{display:block;padding:.32rem .6rem;border-radius:8px;font-size:.86rem;color:var(--ink)}
+nav.side a:hover{background:var(--accent-soft)}
+nav.side .navsec{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:1rem 0 .25rem .6rem}
+main{padding:1.6rem 1.4rem 5rem;min-width:0}
+.hero{background:linear-gradient(135deg,#0d3b3a,#0e6e6b);color:#fff;border-radius:16px;padding:1.8rem 1.6rem;margin-bottom:1.8rem}
+.hero h2{font-size:1.5rem;margin-bottom:.6rem}
+.hero p{font-size:.95rem;opacity:.92;max-width:46em}
+.hero .pill{display:inline-block;background:#ffffff22;border-radius:999px;padding:.15rem .8rem;font-size:.78rem;margin:.8rem .3rem 0 0}
+section.cat{margin-top:2.6rem}
+section.cat>h2{font-size:1.3rem;padding-bottom:.4rem;border-bottom:3px solid var(--accent);display:inline-block;margin-bottom:.4rem}
+section.cat>.catdesc{color:var(--muted);font-size:.9rem;margin-bottom:1.1rem;max-width:52em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;margin-bottom:1.1rem;box-shadow:0 1px 2px rgba(20,30,40,.04)}
+.card .head{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem}
+.card .code{font-family:var(--mono);font-size:.8rem;background:var(--accent-soft);color:var(--accent);padding:.1rem .55rem;border-radius:6px;font-weight:700}
+.card h3{font-size:1.02rem}
+.card .scene{color:var(--muted);font-size:.86rem;margin-bottom:.6rem}
+.body-wrap{position:relative}
+pre.note{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;font-family:var(--mono);font-size:.8rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.note .fld{display:block;border-top:1px dashed #c8ced6;margin:.55rem 0;position:relative}
+pre.note .fld::after{content:"⇥ 下一欄";position:absolute;right:0;top:-.72em;font-size:.62rem;color:#9aa3ad;background:var(--code-bg);padding:0 .35em}
+button.copy{position:absolute;top:.5rem;right:.5rem;border:1px solid var(--line);background:#fff;border-radius:8px;padding:.22rem .7rem;font-size:.74rem;cursor:pointer;color:var(--muted)}
+button.copy:hover{color:var(--accent);border-color:var(--accent)}
+.tip{background:var(--tip-bg);border-left:4px solid var(--tip-border);border-radius:0 10px 10px 0;padding:.6rem .9rem;font-size:.85rem;margin-top:.7rem}
+.tip b{color:#8a6d1f}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:.9rem;margin-top:1.2rem}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem}
+.pcard .num{font-size:.72rem;font-weight:800;color:var(--accent);letter-spacing:.06em}
+.pcard h3{font-size:.98rem;margin:.15rem 0 .3rem}
+.pcard p{font-size:.85rem;color:var(--muted)}
+.disclaimer{margin-top:3rem;padding:1rem 1.2rem;border:1px dashed #c9a0a0;border-radius:12px;background:#fdf6f6;font-size:.82rem;color:#7a4a45}
+.dl{display:inline-block;background:var(--accent);color:#fff;border-radius:10px;padding:.55rem 1.1rem;font-size:.9rem;margin-top:.9rem}
+.dl:hover{opacity:.9}
+footer{color:var(--muted);font-size:.8rem;text-align:center;padding:2rem 1rem 3rem}
+.hidden{display:none!important}
+#noresult{color:var(--muted);text-align:center;padding:2rem;display:none}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  nav.side{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.1rem;padding:.6rem}
+  nav.side .navsec{width:100%;margin:.4rem 0 0 .4rem}
+  nav.side a{font-size:.8rem;padding:.2rem .55rem;background:#fff;border:1px solid var(--line);border-radius:999px;margin:.15rem}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <h1>🛡️ 急診防衛性病歷寫作</h1>
+  <span class="sub">VS 上工前 Orientation · for 急診 V1</span>
+  <input id="search" type="search" placeholder="搜尋：vertigo、SDM、xmbd…">
+</header>
+
+<div class="layout">
+<nav class="side" id="sidenav"></nav>
+<main>
+
+<div class="hero">
+  <h2>寫病歷，是在照顧「未來的自己」</h2>
+  <p>急診的每一份病歷，都可能在幾個月、幾年後被放大檢視——健保審查、醫糾調解、法庭。防衛性病歷寫作（defensive charting）不是推卸責任，而是<b>如實記錄你做過的臨床判斷、給過的建議、和病人共同做的決定</b>。這份 orientation 整理了學長實戰累積的範本：出院 note、SDM、AAD、檢查說明、red flag 衛教、各主訴的 HPI／PE 模板，直接複製就能用。</p>
+  <span class="pill">📋 可一鍵複製</span><span class="pill">📚 附 guideline 引用</span><span class="pill">⌨️ 附 AutoHotkey 快速鍵腳本</span>
+</div>
+
+<section class="cat" id="principles">
+<h2>六大原則</h2>
+<p class="catdesc">所有範本背後的邏輯，其實只有這六件事。</p>
+<div class="principles">
+  <div class="pcard"><div class="num">01</div><h3>出院三要素</h3><p>症狀改善（symptoms improved）＋已安排門診追蹤（opd f/u）＋red flag 衛教（educated back to hospital asap）。每一份出院病歷至少要有這三行。</p></div>
+  <div class="pcard"><div class="num">02</div><h3>記錄「你建議了什麼」</h3><p>病人拒絕住院、拒絕轉院、拒絕檢查？沒關係，但要寫下：我建議過、我告知過最壞後果（shock and death）、病人理解後仍選擇離開。</p></div>
+  <div class="pcard"><div class="num">03</div><h3>SDM：列選項、寫選擇</h3><p>Shared decision making 寫成 option 1 / option 2，各自的風險講清楚，最後一句「after SDM, the pt chose option 2」。證明決策是病人參與的。</p></div>
+  <div class="pcard"><div class="num">04</div><h3>承認檢查的極限</h3><p>CT 對後循環中風不敏感、X 光看不到細微骨折、腦出血可能延遲發生。把「檢查正常 ≠ 完全排除」寫進病歷和衛教，才是真正保護你的那一段。</p></div>
+  <div class="pcard"><div class="num">05</div><h3>用 guideline 幫你背書</h3><p>GRACE-3（頭暈）、AHA/ASA 2021（中風二級預防）、ACR 2025 ＋ KDIGO 2024（顯影劑與洗腎）。臨床決策引用文獻，審查與訴訟時就是你的專家證人。</p></div>
+  <div class="pcard"><div class="num">06</div><h3>Pertinent negatives 是防禦工事</h3><p>HPI 裡一長串的 (-)，證明你問過、想過、排除過 red flags。用模板確保每個主訴該問的都問到，不會漏。</p></div>
+</div>
+</section>
+
+<div id="content"></div>
+<p id="noresult">沒有符合的範本 🤔 換個關鍵字試試</p>
+
+<section class="cat" id="ahk">
+<h2>加碼：AutoHotkey 快速鍵</h2>
+<p class="catdesc">這些範本原本是學長的 AutoHotkey v2 熱字串（hotstring）——在任何輸入框打縮寫（如 <code>xmbdd</code>）就自動展開全文。想要同款體驗：</p>
+<div class="card">
+  <ol style="font-size:.9rem;padding-left:1.4rem">
+    <li>Windows 電腦安裝 <a href="https://www.autohotkey.com/" target="_blank" rel="noopener">AutoHotkey v2</a></li>
+    <li>下載本站整理好的腳本（已含本頁全部範本）</li>
+    <li>雙擊 .ahk 檔執行，之後在病歷系統打縮寫即自動展開</li>
+    <li>建議放進「啟動」資料夾，開機自動載入</li>
+  </ol>
+  <a class="dl" href="ed-note-templates.ahk" download>⬇️ 下載 ed-note-templates.ahk</a>
+  <div class="tip"><b>提醒：</b>HPI/PE 模板中的 <code>{Tab}</code> 是為了在病歷系統欄位間跳轉，不同醫院系統欄位順序不同，上工後請依你們系統微調。</div>
+</div>
+</section>
+
+<div class="disclaimer">
+⚠️ <b>免責聲明：</b>本站範本為臨床病歷寫作之「起手式」參考，<b>務必依每位病人的實際狀況修改</b>，切勿未評估即整段貼上——模板化病歷若與病人實況不符，反而成為訴訟弱點。引用之 guideline 請以原始文獻為準。本站不含任何真實病人資料。
+</div>
+
+<footer>整理自 LZJ 學長的臨床筆記 · 給急診未來的 V1 · 祝上工順利，平安下庄 🙏</footer>
+</main>
+</div>
+
+<script>
+const SECTIONS=[
+{id:"discharge",title:"出院病摘 Discharge Notes",desc:"出院前最後一段 note。核心公式：症狀改善 → 門診追蹤 → red flag 衛教。依主訴選用對應版本，高風險主訴（頭暈、胸痛、頭部外傷）務必用加強版。",items:[
+{code:"xmbdd",title:"通用出院 note",scene:"症狀改善、可出院的一般病人。所有出院病歷的最低標準。",body:"symptoms improved\nopd f/u was suggested/appointed\neducated back to hospital asap if red flag sign",tip:"三行缺一不可。「suggested/appointed」保留兩種寫法：有掛到門診用 appointed，只有建議用 suggested。"},
+{code:"xrest",title:"中文出院摘要（診斷書用）",scene:"診斷書或中文病摘的結尾句。",body:"病患因上述原因至急診室就診，經檢查及診治後於同日出院，建議宜休養及門診複診"},
+{code:"xmbdvertigo",title:"頭暈／眩暈出院（含 GRACE-3）",scene:"dizziness/vertigo 病人症狀改善返家。急診最容易回頭告你的主訴之一——後循環中風初期可以長得跟良性眩暈一模一樣。",body:"病人頭暈症狀改善, 可行走, 無新的局部神經學症狀, 建議回門診追蹤, 衛教如症狀加劇, 或合併發燒, 頭痛, 嘔吐, 步態不穩等其他不適, 宜速至醫院評估\neducated dizzy could be caused by BAO/brainstem/cerebellum stroke which may be resulted in sudden death, however, no exam could complete ruled out nor eliminate the risk\n\nThe Society for Academic Emergency Medicine, in its GRACE-3 guideline, states that both bedside examination and neuroimaging have limitations. CT has poor sensitivity for posterior circulation stroke, and even MRI with diffusion-weighted imaging can miss up to 22% of acute posterior fossa strokes, especially in the first 48 hours. Some patients with posterior circulation stroke may have a normal neurological exam (NIHSS of 0), and isolated dizziness without other focal deficits does not exclude central causes.\nGuidelines for Reasonable and Appropriate Care in the Emergency Department 3 (GRACE-3): Acute Dizziness and Vertigo in the Emergency Department.",tip:"精髓在「no exam could completely rule out nor eliminate the risk」＋引用 GRACE-3：連 MRI-DWI 在 48 小時內都可能漏掉 22% 的後顱窩中風。寫明你已告知極限，而不是假裝檢查正常＝沒事。"},
+{code:"xmbdangina",title:"胸痛出院",scene:"胸痛緩解、初步檢查陰性返家。早期 ACS 的 troponin 和 EKG 都可能正常。",body:"病人胸痛症狀改善, 建議回門診追蹤. 已告知目前雖然胸痛緩解，仍有可能潛在冠狀動脈疾病，或是早期心肌梗塞，返家後，若有持續胸痛胸悶，呼吸喘，冒冷汗，應立即回診，並於心臟科門診追蹤治療",tip:"關鍵句：「仍有可能潛在冠狀動脈疾病，或是早期心肌梗塞」。承認不確定性＋指定心臟科追蹤。"},
+{code:"xmbdabd",title:"腹痛出院",scene:"腹痛改善返家。早期闌尾炎、腸阻塞常在第一次就診時不典型。",body:"病人腹痛症狀改善, 建議回門診追蹤, 衛教如症狀加劇, 或合併持續嘔吐, 發燒, 血黑便等其他不適, 宜速至醫院評估"},
+{code:"xmbdflank",title:"腰痛／下背痛出院",scene:"flank pain / low back pain 改善返家。",body:"病人痛症狀改善, 建議回門診追蹤, 衛教下背痛可能來自其他更嚴重的狀況（如感染、血管或脊椎疾病），若出現發燒、血尿、持續劇痛或無法排尿，請立即就醫",tip:"點名「感染、血管或脊椎疾病」——把 epidural abscess、AAA 這類災難級鑑別放進衛教。"},
+{code:"xmbdhernia",title:"腹股溝疝氣出院",scene:"inguinal hernia 復位後、無嵌頓證據返家，等待擇期手術。",body:"There is no evidence of bowel incarceration, and no obvious laboratory abnormalities were noted. Therefore, there is currently no indication for emergency surgery.\nI explained the management of inguinal hernia to the patient, especially the role of surgical intervention. I also informed him that if the inguinal hernia recurs or bowel incarceration occurs before elective surgery, emergency surgery may be considered.",tip:"寫明「currently no indication for emergency surgery」的依據（無嵌頓、lab 正常），並預告 red flag（復發、嵌頓）時的處置路徑。"},
+{code:"xmbdstroke",title:"中風／TIA 出院（含 AHA/ASA 2021）",scene:"開立 antiplatelet 後返家或轉門診的缺血性中風／TIA 病人。",body:"explained antiPLT could only reduce risk of worsening of stroke or 2nd stroke, but NOT completely eliminate the risk\neducated the pt to inform Dr/nurse or visit hospital ASAP if symptoms of stroke progressed\n\nThe American Heart Association/American Stroke Association guideline explicitly states that antiplatelet therapy (such as aspirin, clopidogrel, or dual antiplatelet regimens) is effective for secondary prevention of noncardioembolic stroke or TIA, but breakthrough ischemic events still occur despite therapy\n2021 Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack: A Guideline From the American Heart Association/American Stroke Association.",tip:"病人吃了 aspirin 還是中風擴大，家屬第一個問「是不是藥沒效／醫師沒處理」。這段先寫明：藥物只能降風險、breakthrough events 依然會發生，guideline 白紙黑字。"},
+{code:"xmaskstroke",title:"意識不清：masked stroke 告知",scene:"altered LOC 病人，影像無大中風，但意識差無法完成完整神經學檢查。",body:"for the altered LOC, informed family the possibility of masked stroke 目前檢查結果沒有大中風，但無法完全排除小中風，那要等意識更加進步、能進行完整神經學檢查才能完全排除。",tip:"「無法完全排除，要等意識進步才能排除」——把診斷的時間軸講清楚，家屬日後才不會說「當初都沒講」。"},
+{code:"xmbdsuicide",title:"自殺意念病人返家",scene:"自殺風險評估後適合返家的病人。",body:"意識清楚可以自行表達意願，家屬表示願意協助照顧避免自殺",tip:"兩個要件：病人有決定能力＋家屬承諾陪伴照顧。缺一個就要重新考慮能不能放人。"},
+{code:"xmbdpe",title:"外傷疼痛出院（X 光陰性）",scene:"外傷疼痛、X 光初判無骨折返家。",body:"opd f/u was suggested/appointed\neducated back to hospital asap if red flag sign\n若疼痛仍然持續，請回門診追蹤。 “症狀” 對於骨折最爲敏感。有些細微的骨折、骨裂，一開始的 X 光看不到，開始愈合後骨折的裂痕才會在 X 光上顯現。",tip:"occult fracture 衛教：「開始癒合後裂痕才會顯現」——這句話讓一週後回診發現骨折的病人不會覺得你漏診。"},
+{code:"xmbdxr",title:"X 光待正式報告出院",scene:"照過 X 光返家、放射科正式報告未發。",body:"opd f/u was suggested/appointed\neducated back to hospital asap if red flag sign\n請回門診追蹤身體痊愈的情況。\n今天 X 光的正式報告，要經影像科醫師用專業醫療顯示器判讀後才會發出，請回診追蹤正式報告。有些細微的骨折、骨裂，一開始的 X 光看不到，開始愈合後骨折的裂痕才會在 X 光上顯現。",tip:"正式報告 discrepancy 是急診常見糾紛來源。寫明「已交代回診追正式報告」，責任鏈就完整了。"},
+{code:"xmbdwoct",title:"頭部外傷「未做 CT」出院",scene:"低風險頭部外傷，與家屬討論後未安排 CT 返家。",body:"opd f/u was suggested/appointed\n請回門診追蹤身體痊愈的情況\neducated back to hospital asap if red flag sign\n比起 X 光、電腦斷層等影像檢查，  “症狀”  對於腦出血更為敏感。\n有些出血是延遲性發生的，所以應密切注意是否出現以下症狀：\n單側手腳無力\n臉歪嘴斜\n持續嘔吐\n意識變差，昏昏沉沉叫不醒\n躁動不安，無法安撫\n癲癇抽搐發作\n若有以上症狀，請儘快回診。",tip:"沒做 CT 的頭部外傷，衛教要比做了 CT 的更完整。逐條列出神經學 red flags，家屬看得懂、做得到。"},
+{code:"xmbdct",title:"頭部外傷「做了 CT」出院",scene:"頭部外傷 CT 初判無出血返家。",body:"opd f/u was suggested/appointed\n請回門診追蹤身體痊愈的情況\n電腦斷層的正式報告，要經影像科醫師用專業醫療顯示器判讀後才會發出，請回診追蹤正式報告。\neducated back to hospital asap if red flag sign\n比起 X 光、電腦斷層等影像檢查，  “症狀”  對於腦出血更為敏感。\n有些出血是延遲性發生的，所以應密切注意是否出現以下症狀：\n單側手腳無力\n臉歪嘴斜\n持續嘔吐\n意識變差，昏昏沉沉叫不醒\n躁動不安，無法安撫\n癲癇抽搐發作\n若有以上症狀，請儘快回診。",tip:"CT 陰性 ≠ 不會出血。delayed ICH（尤其老人、服用抗凝血劑者）永遠要放進衛教。"}
+]},
+{id:"sdm",title:"SDM / AAD / 轉院",desc:"病人不照你的建議走時，病歷怎麼寫。公式：我建議了什麼 → 病人選了什麼、為什麼 → 我告知過最壞後果 → 仍安排了退路（門診追蹤＋red flag 衛教）。",items:[
+{code:"xaadd",title:"AAD 違反醫囑自動出院",scene:"你建議住院打抗生素，病人堅持要走。",body:"I suggested stay at ED for IV abx and admission\nbut the pt requested AAD 因爲______\nunderstood the risk of shock and death\nopd f/u was appointed\neducated back to hospital asap if red flag sign",tip:"「因爲」後面一定要補病人自己講的理由（要照顧家人、經濟考量⋯）。「understood the risk of shock and death」——後果要寫到最重的那一級，不是寫「可能變嚴重」。"},
+{code:"xsdmm",title:"SDM：住院 vs 口服藥返家",scene:"感染症可收可放的灰色地帶，與病人共同決策。",body:"I suggested\noption 1: stay at ED for IV abx and admission\noption 2: PO abx w/ close opd f/u, back to hospital asap if red flag sign\nafter SDM, the pt chose option 2",tip:"SDM 的病歷格式就是這麼簡單：option 1 / option 2 / after SDM, the pt chose。日後爭議時，這是「病人參與決策」的直接證據。"},
+{code:"xsdmwuguan",title:"SDM：假日無眼科／牙科值班",scene:"假日遇到眼窩蜂窩性組織炎疑慮，院內無眼科／牙科可會診。",body:"since no duty oph/dent here for now due to holiday,\nI suggested\noption 1: transfer to medical center immediately for oph/dent consultation, to r/o post-septal cellulitis\noption 2: survey and tx pre-septal cellulitis here first\nafter SDM, the pt chose option 2",tip:"先寫明客觀限制（no duty oph/dent due to holiday），再列選項。醫院端的資源限制不是你的錯，但沒寫就變成你的錯。"},
+{code:"xsdmoph",title:"SDM：轉院眼科 vs 口服抗病毒藥",scene:"如 herpes zoster ophthalmicus 等需眼科評估但病人不願轉院。",body:"I suggested\noption 1: transfer to medical center immediately for oph consultation\noption 2: PO antiviral w/ close opd f/u, back to hospital asap if red flag sign\nafter SDM, the pt chose option 2"},
+{code:"xtransfer",title:"家屬拒絕轉院",scene:"病人在他院有完整病歷／原治療團隊，你建議轉回，家屬堅持留下。",body:"suggested transfer to ○○醫院 where had the pt's complete record\nbut the family wished to received tx and adm here",tip:"把「○○醫院」換成實際院名。這兩行保護你不被「為什麼不轉去原醫院」追殺。"}
+]},
+{id:"consent",title:"檢查與處置的告知",desc:"打顯影劑、侵入性處置、病危告知——事前的 informed consent 寫得越具體，事後越安全。",items:[
+{code:"xctkidney",title:"腎功能不良打顯影劑 CT",scene:"敗血症疑慮但 Cr 偏高，需要 contrast CT 找感染源。家屬最常問「打顯影劑會不會洗腎」。",body:"arrange CT w/ contrast\nexplain compared to the risk of contrast nephropathy, sepsis is more harmful to kidney\nCT w/ contrast is crucial for the ddx of sepsis\npt and family agreed to CT w/ contrast\n\n電腦斷層需要打顯影劑，才能看清楚發炎感染、是否有缺血壞死等現象，這會決定我們的治療如何進行。例如器官壞死可能需要開刀，例如發炎化膿變成一包膿瘍可能需要插入一根管子引流乾净...\n嚴重的發炎感染，會影響腎臟的功能，增加腎臟的負擔，甚至增加洗腎的幾率。\n電腦斷層的顯影劑，要靠腎臟代謝，也會增加腎臟的負擔，甚至增加洗腎的幾率。\n但以病人目前的臨床狀況，發炎感染對腎臟的負擔 大於＞ 顯影劑對腎臟的負擔。建議要進行電腦斷層的檢查，才能對症下藥，給病人最適當最好的治療。",tip:"說服邏輯：兩邊都傷腎，但「敗血症對腎的傷害 ＞ 顯影劑對腎的傷害」。把利弊天平寫進病歷，就不是「醫師擅自打顯影劑害病人洗腎」。"},
+{code:"xhdcontrast",title:"洗腎病人打顯影劑（ACR 2025 / KDIGO 2024）",scene:"規則血液透析病人需打顯影劑，放射科要求告知後 24 小時內安排洗腎。",body:"the department of radiology requested us to inform the pt and family: 建議接受顯影劑注射後，within 24小時再安排一次洗腎\nI informed them, and confirmed 他們時間上可配合\n\nI also informed them\nACR（美國放射學會）2025年指引明確指出：病人不應僅因為接受含碘顯影劑而啟動急性透析、改變連續性腎臟替代治療，或更改原定的洗腎時程，無論腎功能如何，因為這樣做有風險、成本高且缺乏效益\nKDIGO 2024年指引也指出：預防性的顯影劑前後洗腎已被證實可能有害，不建議使用\n1. ACR Manual on Contrast Media 2025. American College of Radiology. 2025. ACR Committee on Drugs and Contrast Media\n2. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney International. 2024.",tip:"院內流程（放射科要求）和實證（ACR/KDIGO 說不需要）不一致時：兩邊都記錄——照流程告知並確認病人可配合，同時寫明 guideline 的立場。"},
+{code:"xinvasive",title:"侵入性處置前記錄",scene:"胸腔穿刺（可改編為 CVC、腰椎穿刺等）前的標準記錄。",body:"suggest thoracentesis, explained risk, the pt and family understood and agreed\nnever thoracentesis before\nno antiPLT/anticoagulant use\nnormal PLT\nhx of PT/aPTT normal, no hx of bleeding diathesis\n",tip:"侵入性處置前五件事：告知同意、既往處置史、抗血小板／抗凝血藥、PLT、凝血功能＋出血體質史。照這個 checklist 寫，出血併發症發生時你已證明術前評估完整。"},
+{code:"xcritical",title:"病危告知",scene:"病況危急、可能急救的病人，對家屬的告知記錄。",body:"告知病況危急, 很可能迅速進展至死亡, 請家屬要有心理準備.\n可能需要急救包含插管, 壓胸, 電擊等措施. 急救過程中亦有可能心肺停止, 腦部缺氧變成植物人.",tip:"病危告知要具體到「插管、壓胸、電擊」和「腦缺氧變成植物人」。講過但沒寫＝沒講。"},
+{code:"xclampfoley",title:"Clamp Foley 膀胱訓練",scene:"移除尿管前的膀胱訓練醫囑說明。",body:"clamp foley for foley removal training, 讓膀胱漲尿，看病人是否會有尿意"}
+]},
+{id:"hpi-trauma",title:"HPI 模板：外傷",desc:"外傷 HPI 的重點是系統性排除：頭部（LOC、失憶、抗凝血劑）、頸胸腹背、四肢關節 ROM、破傷風。範本中的 (-) 都是要親自問過才能留下的。標示「⇥ 下一欄」處為原病歷系統的欄位切換。",items:[
+{code:"xta",title:"車禍 Traffic Accident",scene:"機車騎士車禍全套：HPI＋神經學 PE。",fields:["as triage and present illness","traffic accident just now, a motorcycle rider, collision w/ a ______\n- most painful around ______\n- neither abrasion nor laceration\n\n- wore helmet\n- denied head contusion\n- initial loss of conscious (-), amnesia (-), severe headache (-), vomit (-), use of antiPLT/anticoagulant (-)\n- denied neck, chest, back, abd pain\n- bilateral shoulder, elbow, wrist, hip, knee, ankle ROM full\n\ntoxoid vaccine in 5y (-)","denied systemic dx","as NE","Head: Scalp: Normal\nPupils: Isocoric\nConjunctiva: Not Pale  Sclera: Anicteric\nNeck: Supple   Jugular Vein Engorgement: -  Lymphadenopathy: -","Chest: Symmetric expansion, Breath sound: Clear\nHeart: Regular Heart Beat, Murmur: -","Abdomen: Soft\nBowel sound: Normal","as above","- E4V5M6, oriented, can obey order completely, fluent speech, full muscle power\n- Raccoon eyes(-), subconjunctiva hemorrhage(-), rhinorrhea(-), Battle's sign(-), otorrhea(-), movable facial bone(-)\n- pupil size: R/L 3.5/3.5\n- EOM not limited, no nystagmus\n- no obvious facial palsy\n- no uvula deviation, no tongue deviation, fasciculation, atrophy\nMuscle power:\nRUL 5; LUL 5\nRLL 5; LLL 5\n- Romberg test: negative\n- FNF: no dysmetria on either side"],tip:"車禍病歷是日後保險理賠、司法傷勢鑑定的依據，「most painful around」「collision w/」空格記得填。頭部五問（LOC/失憶/劇烈頭痛/嘔吐/抗凝血劑）＋全身關節 ROM 一次掃過。"},
+{code:"xfell",title:"跌倒 Fall",scene:"跌倒全套。第一句就排除「跌倒前」的心因性原因。",fields:["as triage and present illness","fell from ______ during ______, denied chest pain nor syncope at that time\ncontusion on floor\n- most painful around ______\n- neither abrasion nor laceration\n\n- denied head contusion\n- initial loss of conscious (-), amnesia (-), severe headache (-), vomit (-), use of antiPLT/anticoagulant (-)\n- denied neck, chest, back, abd pain\n- bilateral shoulder, elbow, wrist, hip, knee, ankle ROM full\n\ntoxoid vaccine in 5y (-)","denied systemic dx","as NE","Head: Scalp: Normal\nPupils: Isocoric\nConjunctiva: Not Pale  Sclera: Anicteric\nNeck: Supple   Jugular Vein Engorgement: -  Lymphadenopathy: -","Chest: Symmetric expansion, Breath sound: Clear\nHeart: Regular Heart Beat, Murmur: -","Abdomen: Soft\nBowel sound: Normal","as above","- E4V5M6, oriented, can obey order completely, fluent speech, full muscle power\n- Raccoon eyes(-), subconjunctiva hemorrhage(-), rhinorrhea(-), Battle's sign(-), otorrhea(-), movable facial bone(-)\n- pupil size: R/L 3.5/3.5\n- EOM not limited, no nystagmus\n- no obvious facial palsy\n- no uvula deviation, no tongue deviation, fasciculation, atrophy\nMuscle power:\nRUL 5; LUL 5\nRLL 5; LLL 5\n- Romberg test: negative\n- FNF: no dysmetria on either side"],tip:"「denied chest pain nor syncope at that time」——跌倒是果不是因？先排除 syncope、ACS 造成的跌倒，別只看外傷。"},
+{code:"xpedfell",title:"兒童跌倒",scene:"幼兒跌倒／墜落，PE 以行為觀察取代配合度需求。",fields:["as triage and present illness","- initial loss of conscious (-), vomit (-), use of antiPLT/anticoagulant (-)","denied systemic dx","clear","Head: Scalp: Normal\nPupils: Isocoric\nConjunctiva: Not Pale  Sclera: Anicteric\nNeck: Supple   Jugular Vein Engorgement: -  Lymphadenopathy: -","Chest: Symmetric expansion, Breath sound: Clear\nHeart: Regular Heart Beat, Murmur: -","Abdomen: Soft\nBowel sound: Normal","Normal","Raccoon eyes(-), subconjunctiva hemorrhage(-), rhinorrhea(-), Battle's sign(-), otorrhea(-), movable facial bone(-)\npupil size: R/L 3.5/3.5\nno irritability\nappropriate gaze and response to stimulus\nno obvious hematoma\nnormal muscle tone, no ROM limitation for 4 limbs"],tip:"不會講話的孩子，用「no irritability、appropriate gaze and response to stimulus」記錄神經學狀態。"}
+]},
+{id:"hpi-med",title:"HPI 模板：內科主訴",desc:"每個主訴各有一組必問的 red flags——模板的價值在於保證不漏問。用的時候把 (-) 改成實際問到的答案，有 (+) 就要展開描述。",items:[
+{code:"xfever",title:"發燒（成人）",scene:"成人發燒的系統性 review：呼吸道、腸胃、泌尿道、管路、TOCC。",body:"fever\n- cough(-), sore throat(-), muscle soreness(-)\n- abd pain(-), vomit(-), diarrhea(-)\n- dysuria(-), frequency(-), incomplete sensation(-)\n- tube/catheter(-)\n- TOCC: unremarkable",tip:"「tube/catheter(-)」——長照病人的發燒源常在管路上，別漏。"},
+{code:"xtocc",title:"TOCC",scene:"旅遊、職業、接觸、群聚史。",body:"TOCC: denied travel, denied contact hx, denied unprotected sexual hx"},
+{code:"xangina",title:"胸痛",scene:"胸痛的 ACS／aortic dissection／PE／herpes zoster 快速掃描。",body:"- radiating pain (-), diaphoresis (-)\n- intermittent speaking(-), accessory muscle use(-)\n- pitting edema(-)\n- cough (-), sputum (-)\n- fever(-)\n- bilateral radial pulse symmetric\n- no rash over chest",tip:"「bilateral radial pulse symmetric」防 dissection、「no rash over chest」防 zoster——兩個一秒鐘的檢查，寫下來價值連城。"},
+{code:"xabd",title:"腹痛",scene:"腹痛定位＋放射痛＋危險因子。上腹痛同時排除心因性。",body:"- abd pain:\nepigastrium, radiating to back (-), radiating to shoulder (-), chest tightness (-), hx of CAD (-)\n\nperi-umbilicus, non-migratory\n\n- vomit (-), nausea (-)\n- diarrhea (-)\n- fever (-)\n- previous abd surgery (-)\n- preceding spoiled food (-), oily food (-), alcohol (-)\n- TOCC: unremarkable",tip:"上腹痛必問 chest tightness＋CAD 史——inferior MI 以 epigastralgia 表現是經典陷阱。「non-migratory」是在排除闌尾炎的移動痛。"},
+{code:"xsob",title:"呼吸喘",scene:"喘的病人先寫 baseline，再掃 CHF／asthma／肺炎／吸入性／出血。",body:"baseline ADL partial dependent, could walk w/ stick, could speak complete sentences, E4M6V5\n\ndyspnea\nintermittent speaking(-), accessory muscle use(-)\nchest tightness/pain(-), pitting edema(-)\nwheezing(-)\nfever(-), cough(-), sputum(-), post-prandial choking(-)\nrecent bloody/tarry stool(-)",tip:"「recent bloody/tarry stool(-)」——喘也可能是貧血。baseline ADL 沒寫，之後沒人知道病人是變差還是本來就這樣。"},
+{code:"xstridor",title:"上呼吸道（stridor）",scene:"喉部異物感／感染，評估氣道危險度。",body:"stridor(-)\nintermittent speaking(-), accessory muscle use(-)\ndysphagia(-): still tolerate drinking water\nsaliva pooling(-)",tip:"「still tolerate drinking water」「saliva pooling(-)」是氣道還安全的客觀證據。"},
+{code:"xshock",title:"Shock／敗血症評估",scene:"血壓低、疑似敗血症的病人找感染源＋排除出血。",body:"baseline ADL partial dependent, could walk w/ stick, E4M6V5\n\ndenied fever\n- cough(-), sputum(-), sore throat(-), headache(-), muscle soreness(-)\n- abd pain(-), vomit(-), diarrhea(-)\n- dysuria(-), frequency(-), incomplete sensation(-)\ndenied hematuria, tarry stool"},
+{code:"xgib",title:"腸胃道出血",scene:"黑便／吐血。先確認是不是真的 GI bleeding（鐵劑會染黑大便）。",body:"melena for ___d, ___time/d\ncoffee-ground emesis\nfever (-), abd pain (-)\nprevious episode (-)\nFe supplement (-)\nrecent NSAID/anticoagulant/steroid (-)\nhx of cirrhosis (-), alcoholism (-)\nhx of aortic graft (-)\n\n———\nhematemesis\nhematochezia\ndenied hemorrhoid",tip:"「hx of aortic graft (-)」是在排除 aortoenteric fistula——少見但致命，問過寫過就是防護。"},
+{code:"xhtn",title:"高血壓（無症狀 vs 急症）",scene:"血壓高掛急診，區分 hypertensive urgency 與 emergency 的症狀掃描。",body:"baseline BP ______\ndrowsy(-), headache(-), dizzy(-), vertigo(-), nausea(-), vomit(-), blurred vision(-), chest tightness(-)\n\ndiplopia(-), dysarthria(-), dysphagia(-), drooling(-)",tip:"這串 (-) 就是「無 end-organ damage 證據」的病歷證明，決定了要不要積極降壓。"},
+{code:"xurticaria",title:"蕁麻疹",scene:"皮疹病人排除 anaphylaxis 與 SJS。",body:"well-circumscribed, erythematous, pruritic wheal over trunk and 4 limbs\ndenied throat swelling, dyspnea, fever, oral mucosal ulcer\ndenied recent new drug or food, bug bite",tip:"「oral mucosal ulcer」在排除 SJS/TEN，「throat swelling, dyspnea」在排除 anaphylaxis——皮膚科主訴的兩個致命鑑別。"},
+{code:"xcellulitis",title:"蜂窩性組織炎 vs 壞死性筋膜炎",scene:"肢體紅腫熱痛，記錄無 nec fasc 徵象。",body:"denied fever\nno open wound\nno crepitus, no blister, no disproportional pain",tip:"crepitus、blister、disproportional pain——necrotizing fasciitis 三徵。寫了 (-)，代表你想過這個鑑別。"},
+{code:"xfournier",title:"會陰感染（Fournier）",scene:"會陰／肛周疼痛，排除 Fournier's gangrene。",body:"denied unprotected sexual intercourse\nno local redness, no crepitus, no disproportional pain\ndenied anal pain\ndenied fever, flank pain, scrotum pain nor dysuria"},
+{code:"xfishbone",title:"魚刺哽喉",scene:"誤吞魚刺，評估位置與氣道。",body:"miswallow fishbone\nsore throat(+)\nlump in throat(+): central / right / left side\nodynophagia(+)\ndysphagia(-): still tolerate drinking water\ndyspnea(-), saliva pooling(-)\nNPO since ______"},
+{code:"xfacialcell",title:"臉部蜂窩性組織炎",scene:"臉腫，排除深部感染與牙源性膿瘍。",body:"facial swelling\n- no pus discharge under palpation from outside nor inside oral cavity\n- no obvious facial asymmetry, no trismus\n- EOM not limited\n- denied recent dental procedure\n- denied fever",tip:"「EOM not limited」在排除 orbital（post-septal）cellulitis，「trismus」在排除深頸部感染。"},
+{code:"xaur",title:"急性尿滯留",scene:"AUR 除了放尿管，還要找原因：脊髓、藥物、感染。",body:"denied constipation, bil leg MP 5, denied preceding trauma nor buttock contusion, denied recent antihistamine use\n- fever (-)\n- hematuria(-), flank pain (-)\n- vomit (-), abd pain (-)\n- previous abd surgery (-)",tip:"「bil leg MP 5」——尿滯留＋下肢無力＝cauda equina，直到證明不是。"},
+{code:"xflank",title:"腰痛 Flank Pain",scene:"單側腰痛，結石 vs 腎盂腎炎。",body:"acute right / left flank pain since ______\n- fever (-)\n- dysuria(-), frequency(-), incomplete sensation(-)\n- hematuria(-)\n- vomit (-)\n- previous abd surgery (-)"},
+{code:"xbackpain",title:"下背痛",scene:"下背痛，功能評估＋馬尾症候群排除。",body:"acute right / left / central low back pain since ______\n- radiating to posterior thigh(-)\n- preceding trauma (-), weight bearing (-), exercise (-)\n- still tolerate walking, transposition\n- still could flex hip and knee, extend knee\n- denied incontinence",tip:"「denied incontinence」＋可行走＋下肢肌力——cauda equina 的排除證據。"},
+{code:"xlowabd",title:"下腹痛（女性）",scene:"女性下腹痛：疝氣、泌尿道、婦科（懷孕！）一次問完。",body:"- inguinal hernia(-)\n- dysuria(-), frequency(-), incomplete sensation(-)\n- LMP ______\nregular, interval ___d, duration ___d, ___pads/d, dysmenorrhea(-)\ndenied possibility of pregnancy\nintercourse in recent 1w (-), postcoital pain (-)\nincreased vaginal discharge (-)",tip:"育齡女性腹痛，LMP 和懷孕可能性沒寫＝沒問。ectopic pregnancy 是急診永遠的地雷。"},
+{code:"xobgyn",title:"孕婦出血",scene:"早期妊娠陰道出血。",body:"G_P_SA_AA_, AP___w, IUGS+\nLMP ______\nEDC ______\nvaginal spotting, dark red, 10塊硬幣大小\ndenied abd nor low back pain nor tightness\ndenied sexual intercourse, trauma, exercise\n\nLMP, interval, duration, amount ___pads/d, dysmenorrhea(-)",tip:"「IUGS+」（子宮內妊娠囊已確認）是關鍵——還沒確認 IUGS 前，所有早孕出血都要想 ectopic。出血量用「10塊硬幣大小」這種病人講得出的單位。"}
+]},
+{id:"hpi-neuro",title:"HPI 模板：神經／精神",desc:"神經科主訴是急診醫糾重災區。共同原則：記錄 last normal time、baseline、完整神經學檢查、和「已排除的災難」。",items:[
+{code:"xheadache",title:"頭痛",scene:"頭痛，排除 SAH／腦膜炎／CVST／dissection。",body:"headache, left side, intermittent, lasting 5~10 min/times, happened all day, VAS up to 10\n\n- asymmetric limb weakness(-), dysarthria(-), dysphagia(-), diplopia(-)\n- vomit(-), fever(-), neck tightness(-), photophobia(-)\n- chest tightness/pain(-), syncope(-)\n- preceding trauma(-), neck massage/manipulation(-)\n\n- Kernig(-), Brudzinski(-)",tip:"「neck massage/manipulation(-)」在排除 vertebral artery dissection——年輕人頭痛＋剛去按摩，要提高警覺。"},
+{code:"xvertigo",title:"頭暈／眩暈",scene:"dizziness 病人的中樞性 vs 周邊性鑑別。搭配出院時的 xmbdvertigo 使用。",body:"PH: ______, hx of vertigo(-)\n\ndizziness / vertigo\n- vertigo(-), unsteady gait(-)\n- ear pain(-), hearing loss(-), tinnitus(-)\n- asymmetric limb weakness(-), dysarthria(-), dysphagia(-), diplopia(-)\n- vomit(-), nausea(-), fever(-)\n- chest tightness/pain(-), syncope(-)\n- preceding trauma(-)",tip:"「unsteady gait」是中樞性眩暈最重要的線索——病人能不能走，下床走給你看。"},
+{code:"xstroke",title:"中風",scene:"疑似急性中風，last normal time 決定一切。",body:"PH: ______\nbaseline E4M6V5, ADL independent\n\nlast normal time ______\nasymmetric limb weakness(-)\ndysarthria(-), dysphagia(-), drooling(-)\nvertigo(-), tinnitus(-)\ndiplopia(-), blurred vision(-)\n\ndenied preceding trauma\ndenied chest pain",tip:"last normal time 不是發現時間——「睡醒發現不會動」的 last normal time 是昨晚就寢前。這個時間決定 tPA/EVT 資格，寫錯是大事。"},
+{code:"xseizure",title:"癲癇",scene:"抽搐發作：已知癲癇 vs 首次發作，兩種版本都在。",body:"PH: last episode of seizure ______\naccording to the pt, no recent AED modification, well adherence to med\n\nPH: denied ______\nwhen ______, suffered from seizure attack lasting ___min, presenting with LOC, bilateral arm and leg clonus, bil eye upward gaze, drooling\nspontaneously seized and the conscious gradually recovered to baseline, with lethargy\nno incontinence\ndenied recent head contusion, fever, chest tightness\n\nfamily hx: (-)",tip:"已知癲癇必問兩件事：最近有沒有改藥、有沒有乖乖吃藥。首次發作則要完整描述發作型態（semiology）。"},
+{code:"xsyncope",title:"昏厥",scene:"syncope 的心因性風險分層。",body:"syncope for <1min during ______, spontaneously recovered\nunwitnessed\ndenied head contusion after syncope\ndenied aura, GTC, incontinence, chest tightness, preceding trauma, recent fever\ndenied hx of seizure, CV disease",tip:"syncope vs seizure 的鑑別（aura、GTC、incontinence）＋心因性 red flags（chest tightness、CV disease 史）一次寫完。"},
+{code:"xcoma",title:"意識不清",scene:"coma/drowsiness：HPI 與 PE 合一的完整模板，含中毒學檢查。",body:"coma / drowsiness since ______\nlast normal time ______\n\ndenied similar episode before\ndenied preceding trauma\ndenied aura, GTC, incontinence\ndenied substance/med use\ndenied chest pain\ndenied recent fever\ndenied hx of seizure, CV disease\n\n- head no bruise, a/w, l/w\n- Raccoon eyes(-), subconjunctiva hemorrhage(-), rhinorrhea(-), Battle's sign(-), otorrhea(-), movable facial bone(-)\n- pupil size: R/L 3.5/3.5\n- no obvious facial palsy\n- no uvula deviation, no tongue deviation, fasciculation, atrophy\nMuscle power:\nRUL 5; LUL 5\nRLL 5; LLL 5\n- no rigidity, no hyperreflexia nor clonus\n- no diaphoresis, no needle tract over limb, no powder over face",tip:"最後三項（diaphoresis、needle tract、powder over face）是中毒學快篩——意識不清永遠要想 overdose。"},
+{code:"xsuicide",title:"自殺／精神科評估",scene:"精神科主訴的結構化風險評估。",body:"visited ED with ______\nlive with ______\nf/u at ______ Hospital\nunder ______\nfair compliance of med, according to the pt\n\nvisual/auditory hallucination: (-)\nsubstance abuse: (-)\n\nrecently, ______\nsuicide risk: ideation(+), plan(-), attempt(-), previous attempt(-)\nhomicide risk: ideation(-), plan(-), attempt(-), previous attempt(-)\n\n- pupil size: R/L 3.5/3.5, light reflex R/L +/+\n- no diaphoresis",tip:"自殺風險四階評估（ideation → plan → attempt → previous attempt）＋homicide risk。這是精神科病人返家或留觀決策的核心文件。"}
+]},
+{id:"hpi-ped",title:"HPI 模板：兒科",desc:"兒科病歷的主角是「活動力、食慾、水分攝取」。發燒模板內建 UTICalc 風險評估——與家屬討論後不驗尿也要寫下討論過程。",items:[
+{code:"xpedfever",title:"兒童發燒",scene:"幼兒發燒全套（HPI＋PE），含 UTI 機率評估與家屬討論。",fields:["as triage and present illness","fever for ___d, since ______, up to ___°C, ___times/d\n- fair / mildly impaired activity; impaired appetite (___% of baseline) but fair fluid intake\n\n- cough(-), rhinorrhea(-), sore throat(-), headache(-), muscle soreness(-)\n- abd pain(-), vomit(-), diarrhea(-)\n- dysuria(-), frequency(-)\n- rash(-)\n- ear pain(-)\n\n- TOCC: unremarkable\n\nProbability of UTI (https://uticalc.pitt.edu/) ______\nafter discussion w/ family, U/A was NOT arranged for now","denied systemic dx","Clear, E: 4, V: 5, M: 6","Head: Scalp: Normal\nPupils: Isocoric\nConjunctiva: Not Pale  Sclera: Anicteric\nEar: normal\nThroat: not injected, tonsil no exudate, no ulcer\nNeck: Supple   Jugular Vein Engorgement: -  Lymphadenopathy: -","Chest: Symmetric expansion, Breath sound: Clear\nHeart: Regular Heart Beat, Murmur: -","Abdomen: Soft\nBowel sound: Normal","Extremities: Normal"],tip:"「Probability of UTI + after discussion w/ family」——用 UTICalc 算出風險、跟家屬討論、記錄共同決定。不驗尿不是漏掉，是討論過的決策。"},
+{code:"xinfantfever",title:"嬰兒發燒",scene:"更小的嬰兒版本：症狀問不出來，改問「odorous urine」等照顧者觀察得到的線索。",fields:["as triage and present illness","fever for ___d, since ______, up to ___°C, ___times/d\n- fair / mildly impaired activity; impaired appetite (___% of baseline) but fair fluid intake\n\n- cough(-), rhinorrhea(-)\n- vomit(-), diarrhea(-)\n- odorous urine(-)\n- rash(-)\n\n- TOCC: unremarkable\n\nProbability of UTI (https://uticalc.pitt.edu/) ______\nafter discussion w/ family, U/A was NOT arranged for now","denied systemic dx","Clear, E: 4, V: 5, M: 6","Head: Scalp: Normal\nPupils: Isocoric\nConjunctiva: Not Pale  Sclera: Anicteric\nEar: normal\nThroat: not injected, tonsil no exudate, no ulcer\nNeck: Supple   Jugular Vein Engorgement: -  Lymphadenopathy: -","Chest: Symmetric expansion, Breath sound: Clear\nHeart: Regular Heart Beat, Murmur: -","Abdomen: Soft\nBowel sound: Normal","Extremities: Normal"]},
+{code:"xkawasaki",title:"川崎氏症篩檢",scene:"發燒 ≥5 天的兒童，附加這段記錄五大臨床特徵皆陰性。",body:"- Conjunctival injection(-), Rash(-), Cervical Adenopathy(-), Strawberry tongue/oral mucositis(-), Hand-foot edema/erythema(-), BCG scar(-)",tip:"發燒超過 5 天的孩子，這一行 (-) 證明你想過 Kawasaki。BCG scar 紅腫是台灣特有的重要線索。"},
+{code:"xnewborn",title:"新生兒",scene:"新生兒就診的出生史＋全身 PE。",body:"G_P_, 3x+x, NSD/CS, prenatal exam normal, newborn screening normal, BBW ______\nBW now ______\n\nHEENT: no caput or cephalhematoma; no oral ulcer\nChest: symmetric expansion, clear breath sound, no murmur\nAbdomen: soft without organomegaly or masses noted, umbilicus clean and dry\nMSK: good muscle tone\nSkin: no rashes noted, icteric skin\nGenitalia: normal, no inguinal hernia"}
+]},
+{id:"pe",title:"PE 模板",desc:"通用 PE 與神經學檢查模板。原則：寫下來的 PE 就是你做過的 PE——反過來說，沒做的不要寫。",items:[
+{code:"xxx",title:"通用 PE（全套）",scene:"一般病人的完整 PE 起手式。",fields:["as triage and present illness","denied systemic dx","Clear, E: 4, V: 5, M: 6","Head: Scalp: Normal\nPupils: Isocoric\nConjunctiva: Not Pale  Sclera: Anicteric\nNeck: Supple   Jugular Vein Engorgement: -  Lymphadenopathy: -","Chest: Symmetric expansion, Breath sound: Clear\nHeart: Regular Heart Beat, Murmur: -","Abdomen: Soft\nBowel sound: Normal","Extremities: Normal"],tip:"模板是起點不是終點——跟主訴相關的部位，要把模板字換成實際發現。"},
+{code:"xneu / xspe",title:"神經學檢查（完整）",scene:"頭部外傷、神經科主訴的完整 NE 記錄。",body:"- E4V5M6, oriented, can obey order completely, fluent speech, full muscle power\n- Raccoon eyes(-), subconjunctiva hemorrhage(-), rhinorrhea(-), Battle's sign(-), otorrhea(-), movable facial bone(-)\n- pupil size: R/L 3.5/3.5\n- EOM not limited, no nystagmus\n- no obvious facial palsy\n- no uvula deviation, no tongue deviation, fasciculation, atrophy\nMuscle power:\nRUL 5; LUL 5\nRLL 5; LLL 5\n- Romberg test: negative\n- FNF: no dysmetria on either side",tip:"前半是 basilar skull fracture 四徵（Raccoon eyes、Battle's sign、CSF rhinorrhea/otorrhea），後半是 CN＋motor＋cerebellar。頭暈病人 Romberg 和 FNF 一定要做要寫。"},
+{code:"xpedpe",title:"兒科神經學觀察",scene:"無法配合指令的幼兒，用行為觀察記錄。",body:"pupil size: R/L 3.5/3.5\nno irritability\nappropriate gaze and response to stimulus\nno obvious hematoma\nnormal muscle tone, no ROM limitation for 4 limbs"},
+{code:"xoph",title:"眼科主訴",scene:"視力模糊等眼科主訴的結構化病史＋視神經／眼肌檢查。",body:"- blurred vision (+), flashing (-), black shadow (-), floater(-)\n- injection (-), ocular pain (-), retroocular pain (-), ocular discharge (-), photophobia (-)\n- diplopia (-)\n- headache(-), nausea(-), vomit(-)\n\nOph Hx:\nop(-), trauma(-), contact lens(-)\nPast Medical History: HTN(-), DM(-), asthma(-), CAD(-), G6PDD(-)\n\nCN II VF: no defect to confrontation test, pupil size: R/L 3.5/3.5, light reflex R/L +/+\nCN III, IV, VI: no pref. gaze, EOM: no limitation, ptosis(-), nystagmus(-)\npursuit: smooth, saccade: no slow saccade",tip:"「headache、nausea、vomit」在篩急性青光眼；G6PDD 是為了開藥安全。急診沒有裂隙燈也能做的檢查都在這了。"},
+{code:"xneck",title:"頸部檢查",scene:"頸痛的神經壓迫快篩。",body:"neck ROM intact, Spurling's sign (-), Lhermitte's sign (-)"}
+]},
+{id:"special",title:"特殊情境",desc:"OHCA 記錄與 HIV PEP——不常遇到，遇到時照著寫就對了。",items:[
+{code:"xohca",title:"OHCA 到院前心跳停止",scene:"OHCA 的 prehospital timeline 完整記錄。ICD: I46.9。",fields:["OHCA   ICD: I46.9","called 119; witnesses(-), bystander CPR(-)\nEMT arrived ______\nThe initial rhythm was non-shockable.\nDC shock *0 time(s) were delivered in the prehospital setting.\nAdvanced airway (LMA) was established.\nEpinephrine of 0 mg was given.\nMechanical CPR (LUCAS) has been deployed.\nHe was sent to our ER at ______\nThe presenting rhythm at ER was asystole/PEA.\n\nvomitus in mouth(-), vomitus in ETT(-)\nbedside echo: ______","NHI cloud: ______","e1m1v1","no significant sign of trauma","no heartbeat, no breathing"],tip:"OHCA 病歷的骨架是時間軸：目擊者→bystander CPR→EMT 到場→initial rhythm→處置→到院→presenting rhythm。這也是日後 ROSC 預後討論和死亡證明的依據。"},
+{code:"xhivpep",title:"HIV PEP 暴露後預防",scene:"高風險性行為暴露後求診。ICD: Z20.828。含完整處方與衛教 checklist。",body:"Z20.828\n\n___h ago exposure to unprotected sexual intercourse, ______, vaginal and oral sex.\nsimilar episode of exposure ___ago\ndenied any MSM\nunknown HIV, HBV status nor HBV vaccination status\n\n1. PEP only recommended if risky exposure occurred within the last 72 hours\n2. Please check Cre, ALT, T-bil, HIV combo test\n3. May check VDRL/RPR, HBsAg, Anti-HBs, Anti-HBc, Anti-HCV (optional)\n4. We will prescribe antiviral regimen if no contraindication:\nBiktarvy 1 tab QD (cash, self-paid per day)\n5. Possible side effect should be educated even low risk: skin rash, hepatotoxicity and renal toxicity\n6. A total 28-day course of ART is recommended\n7. Arrange ID OPD for medication and follow up",tip:"72 小時是硬限制。這個模板同時是 checklist：抽血項目、藥物、副作用衛教、感染科追蹤，一項都不會漏。"}
+]},
+{id:"orders",title:"常用醫囑片段",desc:"幾個常用的 titration／sliding scale 醫囑寫法，數值請依病人狀況調整。",items:[
+{code:"xslide",title:"RI Sliding Scale",scene:"血糖控制 sliding scale。",body:"sliding scale RI SC, 200-250: 4U; 251-300: 6U; 301-350: 8U; ask Dr if >350"},
+{code:"x3u",title:"IVF 加 RI",scene:"點滴內加胰島素。",body:"insulin 3U in D5S 500mL each"},
+{code:"xntg",title:"NTG titration",scene:"NTG 靜脈滴注調整。",body:"start at 12mL/hr, titrate 0~240mL/hr to keep SBP<140mmHg"},
+{code:"xperdipine",title:"Perdipine（nicardipine）titration",scene:"Nicardipine 靜脈滴注調整。",body:"50mg in N/S 200mL, titrate 0-20mL/hr to keep SBP<140mmHg",tip:"Titration 醫囑三要素：起始速率、可調範圍、目標值。護理師照著跑，半夜不用一直叩你。"}
+]}
+];
+
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+const content=document.getElementById("content");
+const nav=document.getElementById("sidenav");
+let navHTML='<div class="navsec">開始</div><a href="#principles">六大原則</a>';
+SECTIONS.forEach(sec=>{
+  navHTML+=`<div class="navsec">${sec.title}</div>`;
+  const s=document.createElement("section");
+  s.className="cat";s.id=sec.id;
+  s.innerHTML=`<h2>${sec.title}</h2><p class="catdesc">${sec.desc}</p>`;
+  sec.items.forEach((it,i)=>{
+    const anchor=sec.id+"-"+i;
+    navHTML+=`<a href="#${anchor}">${it.code.split(" ")[0]} ${it.title}</a>`;
+    const text=it.fields?it.fields.join("\n\n"):it.body;
+    const html=it.fields?it.fields.map(esc).join('<span class="fld"></span>'):esc(it.body);
+    const card=document.createElement("div");
+    card.className="card";card.id=anchor;
+    card.dataset.search=(it.code+" "+it.title+" "+it.scene+" "+text+" "+(it.tip||"")).toLowerCase();
+    card.innerHTML=`<div class="head"><span class="code">${it.code}</span><h3>${it.title}</h3></div>
+      <p class="scene">${it.scene}</p>
+      <div class="body-wrap"><pre class="note">${html}</pre><button class="copy">複製</button></div>
+      ${it.tip?`<div class="tip"><b>💡 學長提點：</b>${it.tip}</div>`:""}`;
+    card.querySelector(".copy").addEventListener("click",e=>{
+      navigator.clipboard.writeText(text).then(()=>{e.target.textContent="已複製 ✓";setTimeout(()=>e.target.textContent="複製",1600)});
+    });
+    s.appendChild(card);
+  });
+  content.appendChild(s);
+});
+navHTML+='<div class="navsec">工具</div><a href="#ahk">AutoHotkey 腳本</a>';
+nav.innerHTML=navHTML;
+
+const searchBox=document.getElementById("search");
+searchBox.addEventListener("input",()=>{
+  const q=searchBox.value.trim().toLowerCase();
+  let any=false;
+  document.querySelectorAll("#content .card").forEach(c=>{
+    const hit=!q||c.dataset.search.includes(q);
+    c.classList.toggle("hidden",!hit);
+    if(hit)any=true;
+  });
+  document.querySelectorAll("#content section.cat").forEach(sec=>{
+    sec.classList.toggle("hidden",!sec.querySelector(".card:not(.hidden)"));
+  });
+  document.getElementById("noresult").style.display=any?"none":"block";
+});
+</script>
+</body>
+</html>
