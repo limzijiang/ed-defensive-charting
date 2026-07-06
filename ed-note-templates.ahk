@@ -12,29 +12,7 @@ SetKeyDelay -1  ; no delay between keys
 ;  範本務必依病人實際狀況修改後再存檔。
 ; =====================================================
 
-; ---------- 常用醫囑片段 ----------
-
-:*:x3u::{
-    Send("insulin 3U in D5S 500mL each")
-}
-:*:xslide::{
-    Send("sliding scale RI SC, 200-250: 4U；251-300: 6U；301-350: 8U；ask Dr if >350")
-}
-:*:xntg::{
-    Send("start at 12mL/hr, titrate 0~240mL/hr to keep SBP<140mmHg")
-}
-:*:xperdipine::{
-    Send("50mg in N/S 200mL, titrate 0-20ml/hr to keep SBP<140mmHg")
-}
-:*:xclampfoley::{
-    Send("clamp foley for foley removal training, 讓膀胱漲尿，看病人是否會有尿意")
-}
-
 ; ---------- 出院病摘 Discharge Notes ----------
-
-:*:xrest::{
-    Send("病患因上述原因至急診室就診，經檢查及診治後於同日出院，建議宜休養及門診複診")
-}
 
 :*:xmbdd::{
     Send("symptoms improved`nopd f/u was suggested/appointed`neducated back to hospital asap if red flag sign")
